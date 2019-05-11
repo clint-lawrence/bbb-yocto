@@ -1,12 +1,12 @@
 #! /bin/bash
 sudo apt update
-sudo apt -yq install build-essential
-sudo apt -yq install chrpath
-sudo apt -yq install diffstat
-sudo apt -yg install gawk
-sudo apt -yg install libncurses5-dev
-sudo apt -yg install texinfo
-sudo apt -yq install python2.7
+sudo apt -y install build-essential
+sudo apt -y install chrpath
+sudo apt -y install diffstat
+sudo apt -y install gawk
+sudo apt -y install libncurses5-dev
+sudo apt -y install texinfo
+sudo apt -y install python2.7
 
 # Yocto is python2 only :(
 sudo ln -sf /usr/bin/python2.7 /usr/bin/python
@@ -44,4 +44,4 @@ cp ../meta-bbb/conf/bblayers.conf.sample conf/bblayers.conf
 
 ##################################################################
 
-bit bake console-image
+bitbake console-image
