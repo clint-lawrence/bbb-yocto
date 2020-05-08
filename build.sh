@@ -7,6 +7,10 @@ sudo apt -y install gawk
 sudo apt -y install libncurses5-dev
 sudo apt -y install texinfo
 sudo apt -y install python2.7
+sudo apt -y install git
+sudo apt -y install pkg-config
+sudo apt -y install subversion
+sudo apt -y install texi2html
 
 # Yocto is python2 only :(
 sudo ln -sf /usr/bin/python2.7 /usr/bin/python
@@ -19,19 +23,19 @@ sudo ln -sf /usr/bin/python2.7 /usr/bin/python2
 
 ##################################################################
 
-git clone -b thud git://git.yoctoproject.org/poky.git poky-thud
+git clone -b krogoth git://git.yoctoproject.org/poky.git poky-krogoth
 
-cd poky-thud
-git clone -b thud git://git.openembedded.org/meta-openembedded
-git clone -b thud https://github.com/meta-qt5/meta-qt5.git
+cd poky-krogoth
+git clone -b krogoth git://git.openembedded.org/meta-openembedded
+git clone -b krogoth https://github.com/meta-qt5/meta-qt5.git
 
 mkdir ~/bbb
 cd ~/bbb
-git clone -b thud git://github.com/jumpnow/meta-bbb
+git clone -b krogoth git://github.com/jumpnow/meta-bbb
 
 ##################################################################
 cd ~
-source poky-thud/oe-init-build-env ~/bbb/build
+source poky-krogoth/oe-init-build-env ~/bbb/build
 
 cp ../meta-bbb/conf/local.conf.sample conf/local.conf
 cp ../meta-bbb/conf/bblayers.conf.sample conf/bblayers.conf
@@ -44,4 +48,4 @@ cp ../meta-bbb/conf/bblayers.conf.sample conf/bblayers.conf
 
 ##################################################################
 
-bitbake console-image
+bitbake qt5-image
