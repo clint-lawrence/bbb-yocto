@@ -48,4 +48,11 @@ cp ../meta-bbb/conf/bblayers.conf-sample conf/bblayers.conf
 
 ##################################################################
 
+# Build target image => tmp/deploy/images/beaglebone
 bitbake qt5-image
+
+# Build the installer image which copies to eMMC => tmp/deploy/images/beaglebone
+bitbake installer-image
+
+# Build sdk => tmp/deploy/sdk/poky[...].sh
+bitbake qt5-image -c populate_sdk
