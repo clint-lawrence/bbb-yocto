@@ -37,8 +37,8 @@ git clone -b krogoth git://github.com/jumpnow/meta-bbb
 cd ~
 source poky-krogoth/oe-init-build-env ~/bbb/build
 
-cp ../meta-bbb/conf/local.conf.sample conf/local.conf
-cp ../meta-bbb/conf/bblayers.conf.sample conf/bblayers.conf
+cp ../meta-bbb/conf/local.conf-sample conf/local.conf
+cp ../meta-bbb/conf/bblayers.conf-sample conf/bblayers.conf
 
 # here is where we can tweak the default options
 
