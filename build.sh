@@ -31,7 +31,7 @@ git clone -b krogoth https://github.com/meta-qt5/meta-qt5.git
 
 mkdir ~/bbb
 cd ~/bbb
-git clone -b krogoth git://github.com/jumpnow/meta-bbb
+git clone -b krogoth git://github.com/clint-lawrence/meta-bbb
 
 ##################################################################
 cd ~
