@@ -29,6 +29,12 @@ cd poky-krogoth
 git clone -b krogoth git://git.openembedded.org/meta-openembedded
 git clone -b krogoth https://github.com/meta-qt5/meta-qt5.git
 
+# find out why, if at all, we need these layers
+git clone -b v5.6.3 https://code.qt.io/yocto/meta-boot2qt.git 
+git clone -b krogoth git://git.yoctoproject.org/meta-mingw
+git clone -b krogoth https://git.yoctoproject.org/git/meta-qt4.git
+git clone -b krogoth git://git.yoctoproject.org/meta-ti
+
 mkdir ~/bbb
 cd ~/bbb
 git clone -b krogoth git://github.com/clint-lawrence/meta-bbb
@@ -49,10 +55,10 @@ cp ../meta-bbb/conf/bblayers.conf-sample conf/bblayers.conf
 ##################################################################
 
 # Build target image => tmp/deploy/images/beaglebone
-bitbake qt5-x11-image
+bitbake qt5-image
 
 # Build the installer image which copies to eMMC => tmp/deploy/images/beaglebone
 bitbake installer-image
 
 # Build sdk => tmp/deploy/sdk/poky[...].sh
-bitbake qt5-x11-image -c populate_sdk
+bitbake qt5-image -c populate_sdk
